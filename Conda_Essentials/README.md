@@ -196,6 +196,10 @@ conda create --name <env_name> --file <filename>.txt
 - To export the current environment package dependencies to a .yml file (**suggested for [sharing](https://conda.io/projects/conda/en/latest/user-guide/concepts/environments.html#share-an-environment) between users**):
 
 ```sh
+conda env export > environment.yml
+```
+To export only those packages installed with exact version specification:
+```sh
 conda env export --from-history -n <env_name_exist> > environment.yml
 ```
 
