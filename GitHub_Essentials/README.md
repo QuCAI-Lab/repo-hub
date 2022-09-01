@@ -197,13 +197,33 @@ git push main # Push your local changes to your remote repository.
   
 # [Pushing Commits](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository) to your remote repository
 
-- Local repository: a repository on your own computer.
+- Local repository: a cloned repository on your own computer.
 - Remote repository: a repository on a GitHub server.
 
-To push changes to an existing repository on-prem, i.e, from your local machine to your remote repository, run:
+To push changes to an existing repository on-prem, i.e, from your local cloned repository to a remote repository, run:
+```sh
+git clone # (Optional) If you haven't cloned the remote repository yet.
+git status # (Optional) To show status of the local repository.
+git diff # (Optional) To show changes made to the local repository.
+
+git add --all # To add all changes (new/untracked and modified files) to the Git staging area.
+git commit -m "<commit_message>" # To define the topic of your commit.
+git push -u origin <branch-name> # Push local changes to the <branch-name> branch of the remote repository.
+```
+
+- Get your password (access token) at: `Settings` >> `Developer settings` >> `Personal access tokens` >> `Generate new token` >> `Select scopes (repo)`.
+
+Pushing commits from the current branch to a target branch:
+
+```sh
+git branch # Show the name of the current branch.
+git push -u <remote> <current-branch>:<target-branch>
+```
+
+Alternative: initializing an empty repository.
 ```sh
 mkdir <dir_name> # Create an empty folder.
-cd <dir_name> # Change directory.
+cd <dir_name> # Enter directory.
 git init # Initialize an empty Git repository.
 
 git remote add origin https://github.com/<your_githubusername>/<repo-name>.git # Set a remote termed "origin" that points to the upstream repository.
@@ -218,21 +238,6 @@ git commit -m "<commit_message>" # Define the topic of your commit.
 git branch -M <newbranch> # (-m | -M) <oldbranch> is renamed to <newbranch>.
 git push -u origin <newbranch> # To push local changes to your forked repository.
 ```
-
-- Get your password (access token) at: `Settings` >> `Developer settings` >> `Personal access tokens` >> `Generate new token` >> `Select scopes (repo)`.
-
-To push future updates, run:
-```sh
-git status # Show status of the local repository.
-git diff # Show changes made to the local repo.
-
-git add --all # Add all changes (new/untracked and modified files) to the Git staging area.
-git commit -m "<commit_message>" # Define the topic of your commit.
-
-git branch # Show the current branch.
-git push -u origin <branch-name> # Push local changes to the <branch-name> branch of your remote repository.
-```
-
 
 <!--- ############################################################################################################################################### -->
 
