@@ -31,7 +31,7 @@ One can choose to install a Git GUI in a local machine rather than using Git via
 
 1. Download the [source tree](https://www.sourcetreeapp.com/) application.
 
-# [Installing Git](https://github.com/git-guides/install-git) on command-line Terminal
+# [Installing Git](https://github.com/git-guides/install-git) from the command-line Terminal
 
 For more information, see the [Git from source](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) guide.
 
@@ -89,12 +89,10 @@ pip install grip && grip -b <filename>.md
 
 <!--- ############################################################################################################################################### -->
 
-
 # Git Commands
 
 The most frequently used commands are:
 - [git clone](https://git-scm.com/docs/git-clone) - To clone a remote repository into a local (on-prem) directory.
-- [git branch](https://git-scm.com/docs/git-branch) - Show available branches and highlight the current branch.
 - [git log](https://git-scm.com/docs/git-log) - Show the latest commits (logs).
 - [git status](https://git-scm.com/docs/git-status) - Show the working tree status of the current GitHub repository.
 - [git diff](https://git-scm.com/docs/git-diff) - Show differences/changes between commits.
@@ -103,7 +101,7 @@ The most frequently used commands are:
 - [git remote -v](https://git-scm.com/docs/git-remote) - Show the url name of the remote repository. The standard name is "origin".
 - [git push -u origin \<branch-name>](https://git-scm.com/docs/git-push) - Push your changes to a branch named `<branch-name>` from the remote (cloud-based) GitHub repository.
 - [git branch \<newbranch>](https://git-scm.com/docs/git-branch) - Create a new branch named `<newbranch>`.
-- [git branch](https://git-scm.com/docs/git-branch) - Show available branches.
+- [git branch](https://git-scm.com/docs/git-branch) - Show available branches and highlight the current branch.
 - [git checkout \<branch-name>](https://git-scm.com/docs/git-checkout) - Switch to an existing branch named `<branch-name>`.
 - [git checkout -b \<newbranch>](https://git-scm.com/docs/git-checkout) - Create a new branch named `<newbranch>` and then checkout.
 - [git pull](https://git-scm.com/docs/git-pull) - a shortcut for completing both `$ git fetch` and `$ git merge` or `$ git rebase` in the same command. 
@@ -116,165 +114,13 @@ $ git checkout <newbranch>
 
 <!--- ############################################################################################################################################### -->
 
-
-# [Git Merge](https://git-scm.com/docs/git-merge) vs [Git Rebase](https://git-scm.com/docs/git-rebase) workflow
-
-When working collaboratively on a project, one has the choice to join two or more development histories by taking commits from a feature branch and placing on top of the header of a main (dev) branch, for example. 
-
-**Git merge**
-
-Git merge combines all commits from the source branch to a target branch. It creates a single merge commit (on top of the target branch header) with all changes from both target and source branches.
-
-To merge/join previous commits from a feature branch into a brand new single merge commit placed on top of the main branch, run:
-```bash
-git merge <target_branch>
-```
-or
-```bash
-git merge --squash <branch-name> # To merge only the latest commits.
-```
-  
-The above command should be followed by `git merge --abort` whenever a merge results in a conflict, and will fail if there were uncommitted changes before `git merge`. Therefore, make sure to commit all changes before running a merge.
-
-If you get hit by the message "stopped before commiting as requested", simply run: `$ git commit -m "<commit-message>"`.
-  
-- Graph visualization:
-```bash
-   Before merge:      After merge:
-                          (*) 
-                           |  \
-        (F)                |  (F) 
-         |                 |   |
-    (M)  |                (M)  |
-     |  (F)                |  (F)
-    (M) /                 (M) /
-     |                     |
-    (M)                   (M)
-```
-
-**Git rebase**
-
-Git rebase rewinds the history of the target branch by duplicating all the commits from the source branch on top of the target branch header while leaving commits from the source branch to be garbage collected.
-
-To rebase/move previous commits from a feature_branch to the top of the main branch, run:
-```bash
-git rebase <target_branch> # To do a rebase against a branch named <target_branch>.
-```
-
-- Graph visualization:
-```bash
-Before rebase      After rebase
-                       (F)                                                    
-     (F)                |   
-      |                (F)  
-     (F)                |  
- (M) /                 (M) 
-  |                     |
- (M)                   (M)
-  |                     |
- (M)                   (M)
-```
-
-**Full example:**
-
-Rebasing against a branch named 'main'.
-```bash
-git clone <repo-address>.git
-git checkout -b feature_branch # Create a new branch named 'feature_branch' to make changes in your local repository.
-git add --all
-git commit -m "<commit-message>" # Commit all changes before merge.
-git checkout main # Switch to the branch 'main'.
-git pull # Make sure to update your local repository in the meantime.
-git checkout feature_branch # Switch back to branch 'feature_branch'.
-git rebase -i main # To perform a rebase against the latest changes.
-git checkout main # Switch back to branch 'main'.
-git rebase -i feature_branch # To align the latest commits placing them on top of the main branch.
-git push main # Push your local changes to your remote repository.
-```
-
-<!--- ############################################################################################################################################### -->
-
-  
-# [Pushing Commits](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository) to your remote repository
-
-- Local repository: a cloned repository on your own computer.
-- Remote repository: a repository on a GitHub server.
-
-To push changes to an existing repository on-prem, i.e, from your local cloned repository to a remote repository, run:
-```sh
-git clone # (Optional) If you haven't cloned the remote repository yet.
-git status # (Optional) To show status of the local repository.
-git diff # (Optional) To show changes made to the local repository.
-
-git add --all # To add all changes (new/untracked and modified files) to the Git staging area.
-git commit -m "<commit_message>" # To define the topic of your commit.
-git push -u origin <branch-name> # Push local changes to the <branch-name> branch of the remote repository.
-```
-
-- Get your password (access token) at: `Settings` >> `Developer settings` >> `Personal access tokens` >> `Generate new token` >> `Select scopes (repo)`.
-
-Pushing commits from the current branch to a target branch:
-
-```sh
-git branch # Show the name of the current branch.
-git push -u <remote> <current-branch>:<target-branch>
-```
-
-Alternative: initializing an empty repository.
-```sh
-mkdir <dir_name> # Create an empty folder.
-cd <dir_name> # Enter directory.
-git init # Initialize an empty Git repository.
-
-git remote add origin https://github.com/<your_githubusername>/<repo-name>.git # Set a remote termed "origin" that points to the upstream repository.
-git remote -v # List the configured remote.
-
-git config user.name "<authors_name>" # Sets a Git username for the current repository (Optional).
-git config user.email "authors_email@mail.com" # Sets the commit e-mail address for the current repository (Optional).
-
-git add --all # Add all new (untracked) files to the Git staging area.
-git commit -m "<commit_message>" # Define the topic of your commit.
-
-git branch -M <newbranch> # (-m | -M) <oldbranch> is renamed to <newbranch>.
-git push -u origin <newbranch> # To push local changes to your forked repository.
-```
-
-<!--- ############################################################################################################################################### -->
-
-
-# [Removing Files](https://git-scm.com/docs/git-rm)
-
-To remove (delete) multiple files from both your Git repository and the current working directory:
-
-```bash
-git rm <filename1> <filename2> <filenameN>
-```
-
-To untrack a file or remove a file from the staging area of your remote repository without deleting it from the working directory of your local machine:
-
-```bash
-git rm --cached <filename>
-```
-
-To override Git **safety check**, use the `-f` or `--force` flag:
-
-```bash
-git rm -f <filename>
-```
-
-Note: Git **safety check** makes sure that the files on your current branch match those in the staging index.
-
-
-<!--- ############################################################################################################################################### -->
-
-
 # Adding a [.gitignore](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files) File
 
 The `.gitignore` file instructs Git to ignore/untrack specific files or folders from a project. Common special characters:
 
-- `*` denotes a wildcard match (placeholder);
-- `/` is used to ignore pathnames relative to the .gitignore file;
-- `#` denotes the comment syntax.
+- `*` denotes a wildcard match (placeholder).
+- `/` is used to ignore pathnames relative to the .gitignore file.
+- `#` the hash symbol denotes the comment syntax.
 
 To add a `.gitignore` file to your cloned repository using the command-line interpreter, follow these steps.
 
@@ -327,9 +173,32 @@ ENV/
 
 For more .gitignore templates, see the [github/gitignore](https://github.com/github/gitignore) public repository.
 
-
 <!--- ############################################################################################################################################### -->
 
+# [Removing Files](https://git-scm.com/docs/git-rm)
+
+To remove (delete) multiple files from both your Git repository and the current working directory:
+
+```bash
+git rm <filename1> <filename2> <filenameN>
+```
+
+To untrack a file or remove a file from the staging area of your remote repository without deleting it from the working directory of your local machine:
+
+```bash
+git rm --cached <filename>
+```
+
+To override Git **safety check**, use the `-f` or `--force` flag:
+
+```bash
+git rm -f <filename>
+```
+
+Note: Git **safety check** makes sure that the files on your current branch match those in the staging index.
+
+
+<!--- ############################################################################################################################################### -->
 
 # [Reverting to a Previous Version](https://git-scm.com/docs/git-reset)
 
@@ -356,8 +225,170 @@ The `-soft` flag keep all the changes in any undone command/commit.
 git checkout -b <newbranch> <version_hash>
 ```
 
+
+<!--- ############################################################################################################################################### -->
+  
+# [Pushing Commits](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository) to your remote repository
+
+Keywords:
+- Local repository: a cloned repository on your own computer.
+- Remote repository: a repository on a GitHub server.
+
+To push changes to an existing repository on-prem, i.e, from your local cloned repository to a remote repository, run:
+```sh
+git clone # (Optional) If you haven't cloned the remote repository yet.
+git status # (Optional) To show status of the local repository.
+git diff # (Optional) To show changes made to the local repository.
+
+git add --all # To add all changes (new/untracked and modified files) to the Git staging area.
+git commit -m "<commit_message>" # To define the topic of your commit.
+git push -u origin <branch-name> # Push local changes to the <branch-name> branch of the remote repository.
+```
+
+- Get your password (access token) at: `Settings` >> `Developer settings` >> `Personal access tokens` >> `Generate new token` >> `Select scopes (repo)`.
+
+Pushing commits from the current branch to a target branch:
+
+```sh
+git branch # Show the name of the current branch.
+git push -u <remote> <current-branch>:<target-branch>
+```
+
+Alternative: initializing an empty repository.
+```sh
+mkdir <dir_name> # Create an empty folder.
+cd <dir_name> # Enter directory.
+git init # Initialize an empty Git repository.
+
+git remote add origin https://github.com/<your_githubusername>/<repo-name>.git # Set a remote termed "origin" that points to the upstream repository.
+git remote -v # List the configured remote.
+
+git config user.name "<authors_name>" # Sets a Git username for the current repository (Optional).
+git config user.email "authors_email@mail.com" # Sets the commit e-mail address for the current repository (Optional).
+
+git add --all # Add all new (untracked) files to the Git staging area.
+git commit -m "<commit_message>" # Define the topic of your commit.
+
+git branch -M <newbranch> # (-m | -M) <oldbranch> is renamed to <newbranch>.
+git push -u origin <newbranch> # To push local changes to your forked repository.
+```
+
 <!--- ############################################################################################################################################### -->
 
+# [Git Merge](https://git-scm.com/docs/git-merge) vs [Git Rebase](https://git-scm.com/docs/git-rebase) workflow
+
+When working collaboratively on a project, one has the choice to join/combine two or more development histories by taking commits from a feature branch and placing them on top of the header of a target branch (main, dev, etc.), for example.
+
+
+## Git Merge
+
+The git merge command join/combines commits from a feature branch into a target branch. It creates a single merge commit on top of the target branch header with all changes from both feature and target branches.
+
+To merge/join previous commits from a branch named 'feature_branch' into a brand new single merge commit placed on top of the branch 'target_branch', run:
+```bash
+git checkout feature_branch # Switch to a branch named 'feature_branch'.
+git merge target_branch
+```
+
+- Git merge commit history visualization:
+```bash
+   Before merge:      After merge:
+                           (*) 
+                            |   \
+         (F2)               |  (F2) 
+          |                 |    |
+    (M5)  |                (M5)  |
+     |  (F1)                |  (F1)
+    (M4) /                 (M4) /
+     |                      |
+    (M3)                   (M3)
+```
+Legend:
+- M: main branch.
+- F: feature branch.
+
+### [Git squash merge](https://git-scm.com/docs/git-merge#Documentation/git-merge.txt---squash)
+
+To merge only the latest commits from a branch named 'feature_branch' into a single merge commit on top of the branch 'target_branch', run:
+```bash
+git checkout feature_branch
+git merge --squash target_branch
+```
+
+The above command should be followed by `git merge --abort` whenever a merge results in a conflict, and will fail if there were uncommitted changes before `git merge`. Therefore, make sure to commit all changes before running a merge. If you get hit by the message "stopped before commiting as requested", simply run: `$ git commit -m "<commit-message>"`.
+  
+## Git Rebase 
+
+Git rebase rewinds the history of the target branch by duplicating all the commits from the source branch on top of the target branch header while leaving commits from the source branch to be garbage collected.
+
+To rebase/move previous commits from a branch named 'feature_branch' to the top of a branch named 'target_branch', run:
+```bash
+git checkout feature_branch
+git rebase -i target_branch # To do a rebase against a branch named <target-branch> within the interactive mode.
+```
+
+**Rebasing upon the last `n` commits from a branch named 'feature_branch':**
+```bash
+git checkout feature_branch
+git rebase -i  HEAD~<n> # Operate upon the last n commits within the interactive mode. 
+```
+
+*Note:* the `-i` flag enables interactive mode, where the default terminal text editor will pop up to enable the user to edit how a list of commits should be rebased.
+
+- Git rebase commit history visualization:
+```bash
+Before rebase      After rebase
+                       (F2)                                                   
+     (F2)               |   
+      |                (F1)  
+     (F1)               |  
+ (M5) /                (M5) 
+  |                     |
+ (M4)                  (M4)
+  |                     |
+ (M3)                  (M3)
+```
+Legend:
+- M: main branch.
+- F: feature branch.
+
+**Full example rebasing against a target branch named 'main'.**
+
+```bash
+git clone <repo-address>.git
+git checkout -b feature_branch # Create a new branch named 'feature_branch' to make changes in your local repository.
+git add --all
+git commit -m "<commit-message>" # Commit all changes before merge.
+git checkout main # Switch to a branch named 'main'.
+git pull # Make sure to update your local repository in the meantime.
+git checkout feature_branch # Switch back to branch 'feature_branch'.
+git rebase -i main # To perform a rebase against the latest changes.
+git checkout main # Switch back to branch 'main'.
+git rebase -i feature_branch # To align the latest commits placing them on top of the main branch.
+git push main # Push your local changes to your remote repository.
+```
+
+<!--- ############################################################################################################################################### -->
+
+# [Git cherry-pick](https://git-scm.com/docs/git-cherry-pick)
+
+To bring only specific commits from a feature branch into a target branch (main, dev, etc.), run:
+
+```bash
+git checkout <feature-branch> # Switch to the branch one wants to bring commits from. 
+git log # Show the id of the commits one wants to bring.
+git checkout <target-branch> # Switch to the branch one wants to move the commits to.
+git cherry-pick <commit-id1> <commit-id2> ... <commit-idN> # To bring one or several commits.
+git push -u origin <target-branch> 
+```
+
+To stage changes without making any commits, use the `-n` flag:
+```bash
+git cherry-pick <commit-id1> -n
+git commit -m "<commit_message>"
+```
+
+<!--- ############################################################################################################################################### -->
 
 # [Pulling Updates](https://docs.github.com/en/get-started/using-git/getting-changes-from-a-remote-repository) from an Upstream remote repository
 
