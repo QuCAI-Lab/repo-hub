@@ -91,20 +91,28 @@ pip install grip && grip -b <filename>.md
 
 # Git Commands
 
-The most frequently used commands are:
 - [git clone](https://git-scm.com/docs/git-clone) - To clone a remote repository into a local (on-prem) directory.
-- [git log](https://git-scm.com/docs/git-log) - Show the latest commits (logs).
-- [git status](https://git-scm.com/docs/git-status) - Show the working tree status of the current GitHub repository.
-- [git diff](https://git-scm.com/docs/git-diff) - Show differences/changes between commits.
-- [git add --all](https://git-scm.com/docs/git-add) - Track all changed/new files to the staging area.
-- [git commit -m "<commit_message>"](https://git-scm.com/docs/git-commit) - Record staged modifications to the local repository and define a message.
+- [git log](https://git-scm.com/docs/git-log) - Show the latest commits (logs) and hash-id.
+- [git status](https://git-scm.com/docs/git-status) - Show the working tree (uncommitted files) status of the current GitHub repository.
+- [git diff](https://git-scm.com/docs/git-diff) - Show differences/changes between the original file and the new version of said file before track/stage (`git add`) and commit (`git commit`).
+- [git restore \<filename1> \<filename2> ...](https://git-scm.com/docs/git-restore) - To discard untracked/unstaged (**before `git add`**) and uncommitted (**before `git commit`**) file changes in the working directory and restore the originals from the index (Git staging area).
+- [git add --all](https://git-scm.com/docs/git-add) - To **Track/stage** all changed (or new) files to the staging area/index.
+- [git restore --staged \<filename>](https://git-scm.com/docs/git-restore) - Restores a file from HEAD after it has been staged (**after `git add`**) and **before `git commit`**.
+- [git fsck](https://git-scm.com/docs/git-fsck) - File system check for dangling blobs (a staged file that was not committed). Used to [restore a file](https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery) after it has been staged (**after git add**) and after **hard reset** (`git reset --hard HEAD`) but **before `git commit`**.
+- [git show \<id> > <filename>.txt](https://git-scm.com/docs/git-show) - Export/save data of a file change to an external file. Use `git fsck` to find the id.
+- [git commit -m "<commit_message>"](https://git-scm.com/docs/git-commit) - Records staged modifications to the local repository and define a message.
+- [git checkout \<hash-id>](https://git-scm.com/docs/git-checkout) - [Recovers/restores](https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery) a file **after commiting** and hard reset (`git reset --hard HEAD`). Use `git log` to find the hash-id.
+- [git reflog](https://git-scm.com/docs/git-reflog) - List the hash-id of current changes.
+- [git reflog \<hash-id>](https://git-scm.com/docs/git-reflog) - Recovers/restores a file **after commiting** and hard reset (`git reset --hard HEAD`). Use `git reflog` to find the hash-id.
 - [git remote -v](https://git-scm.com/docs/git-remote) - Show the url name of the remote repository. The standard name is "origin".
-- [git push -u origin \<branch-name>](https://git-scm.com/docs/git-push) - Push your changes to a branch named `<branch-name>` from the remote (cloud-based) GitHub repository.
 - [git branch \<newbranch>](https://git-scm.com/docs/git-branch) - Create a new branch named `<newbranch>`.
 - [git branch](https://git-scm.com/docs/git-branch) - Show available branches and highlight the current branch.
 - [git checkout \<branch-name>](https://git-scm.com/docs/git-checkout) - Switch to an existing branch named `<branch-name>`.
 - [git checkout -b \<newbranch>](https://git-scm.com/docs/git-checkout) - Create a new branch named `<newbranch>` and then checkout.
-- [git pull](https://git-scm.com/docs/git-pull) - a shortcut for completing both `$ git fetch` and `$ git merge` or `$ git rebase` in the same command. 
+- [git pull](https://git-scm.com/docs/git-pull) - A shortcut for completing both `$ git fetch` and `$ git merge` or `$ git rebase` in the same command. **Make sure to run this command before git push to sync your local clone with the upstream repository.**
+- [git push -u origin \<branch-name>](https://git-scm.com/docs/git-push) - Push your changes to a branch named `<branch-name>` from the remote (cloud-based) GitHub repository.
+- [git reset](https://git-scm.com/docs/git-reset) - Reverts the **HEAD branch** (current branch).
+
 
 Note that `$ git checkout -b <newbranch>` is shorthand for:
 ```sh
@@ -200,6 +208,36 @@ Note: Git **safety check** makes sure that the files on your current branch matc
 
 <!--- ############################################################################################################################################### -->
 
+# Recovering a file
+
+- Suppose one accidentally changed a file, and that change was done before  `git add` and `git commit`. The file could be restored using:
+
+```bash
+git restore <filename>
+```
+
+- Suppose one accidentally changed a file, and that change was done after `git add` and `hard reset` and before `git commit`. The file could be restored using:
+
+```bash
+git fsck >> id
+```
+
+```bash
+git show <id> > <recovered_file>.txt
+```
+
+- Suppose one accidentally changed a file, and that change was done after `git commit` and after `git reset --hard HEAD`. The file could be restored using:
+
+```bash
+git checkout \<hash-id>
+```
+using `git log` to find the hash-id, or via
+```bash
+git reflog \<hash-id
+```
+using `git reflog` to find the hash-id.
+
+<!--- ############################################################################################################################################### -->
 # [Reverting to a Previous Version](https://git-scm.com/docs/git-reset)
 
 - To revert your repository to the last commit:
@@ -217,7 +255,10 @@ or
 ```bash
 git reset --soft <version_id> 
 ```
-The `-soft` flag keep all the changes in any undone command/commit.
+
+The `--hard` flag resets the **index** (Git staging area) and the working tree (uncommitted files). It discards changes to tracked files (after git add) from `git commit` onwards. Untracked (before git add) files or directories are deleted.
+
+The `--soft` flag resets the **HEAD branch** (current branch) leaving the index and working tree (uncommitted files) unchanged.
 
 - Creating a new branch in a specific version and checking out:
 
