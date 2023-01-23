@@ -26,10 +26,16 @@ $ lsb_release -a
 $ who
 ```
 
-- Command manual:
+- To display the manual page for a particular command:
 
 ```bash
 $ man <command>
+```
+
+- To display one-line manual page descriptions:
+
+```bash
+$ whatis <command>
 ```
 
 - To open Gnome file manager in the current directory:
@@ -43,6 +49,19 @@ $ nautilus .
 ```bash
 $ sudo su
 ```
+
+- To locate the binary, source, and manual page files for a command:
+
+```bash
+whereis <command>
+```
+
+- To locate the pathname for a command:
+
+```bash
+which <command>
+```
+
 
 <!--- ####################################################################################################################################################################### -->
 
@@ -93,22 +112,7 @@ or (to list specifics)
 ```bash
 apt list -a <package_name>
 ```
-or
-```bash
-apt list -a sudo
-```
 
-- Locate (binary, source, and manual) files of a command:
-
-```bash
-whereis <file>
-```
-
-- Display file pathname:
-
-```bash
-which -a <file>
-```
 
 ## [TAR-based files](https://explainshell.com/explain?cmd=tar+-xvzf#):
 
@@ -237,23 +241,6 @@ $ cd -
 
 ## Files
 
-- To read a file (.txt, .md, .yml):
-
-```bash
-$ less <filename>
-```
-or (to open the file with gedit)
-
-```bash
-$ gedit <filename>
-```
-
-- To read a .pdf file:
-
-```bash
-$ evince <filename.pdf>
-```
-
 - Listing files in the current directory:
 
 ```bash
@@ -270,6 +257,61 @@ $ ls -l
 or (to list the allocated size of each file, in blocks)
 ```bash
 $ ls -s
+```
+
+- To list a specific file in the current directory:
+
+```bash
+ls <filename>
+```
+or
+```bash
+find <filename>
+```
+
+- To list all files in the current directory with extension .jpg:
+
+find . -name *.jpg
+
+To list an empty file in the current directory:
+
+```bash
+find . -type f -empty
+```
+
+- Listing file properties:
+
+```bash
+stat <filename>
+```
+or
+```bash
+file <filename>
+```
+or
+```bash
+ls -l <filename>
+```
+
+- To read a file (.txt, .md, .yml):
+
+```bash
+$ less <filename>
+```
+or
+```bash
+nano <filename>
+```
+or (to open the file with gedit)
+
+```bash
+$ gedit <filename>
+```
+
+- To read a .pdf file:
+
+```bash
+$ evince <filename.pdf>
 ```
 
 - Creating a `.txt` file:
