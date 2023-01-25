@@ -26,9 +26,9 @@ cd <dir_pathname> && chmod +x <filename>.sh
 ./<filename>.sh
 ```
 
-Install example (if you're coming from the future, check the latest version):
+Install example (check the [latest version](https://docs.anaconda.com/anaconda/install/hashes/lin-3-64/)):
 ```bash
-cd ~/Downloads && chmod +x Anaconda3-2021.11-Linux-x86_64.sh && ./Anaconda3-2021.11-Linux-x86_64.sh
+cd ~/Downloads && chmod +x Anaconda3-2022.10-Linux-x86_64.sh && ./Anaconda3-2022.10-Linux-x86_64.sh
 ```
 
 - To update conda
@@ -77,6 +77,7 @@ conda create -c conda-forge -n <env_name> <package_name>==version
 ```sh
 conda install -n <env_name_exist> <package_name1>==version <package_name2>==version
 ```
+Note: without package version specification, Conda will install the latest version available in the Anaconda cloud.
 
 - To update a package within the root environment:
 

@@ -52,8 +52,9 @@ sudo apt update && apt install git-all
 And for your own sanity, install pip (a python package manager):
 
 ```bash
-sudo apt update && apt install python3-pip && python3 -m pip --version
+sudo apt update && apt install python3-pip && pip -V
 ```
+Note: in pip, the flag `-V` is shorthand for `--version`.
 
 ## With Anaconda
 
@@ -71,19 +72,49 @@ Note: the `-c` flag (abbreviated from --channel) points to the channel (Anaconda
 
 One can choose to make a copy of a public/private GitHub repository from his own [Organization](https://docs.github.com/en/organizations/collaborating-with-groups-in-organizations/about-organizations) or someone else's GitHub account by clicking on the [Fork](https://github.com/octocat/Spoon-Knife) button. For instance, you can Fork this repository by clicking [here](https://github.com/QuCAI-Lab/educational-resources/fork).
 
-# [Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
+# [Git Clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) 
 
-You can set up a Git linkage by cloning your private/public repository to a custom folder/directory of your Local Machine using the Command-line interface ([Unix-like](https://github.com/QuCAI-Lab/educational-resources/tree/main/Linux_Essentials) terminal or [Anaconda environment](https://github.com/QuCAI-Lab/educational-resources/tree/main/Conda_Essentials) prompt with [Git](https://anaconda.org/anaconda/git) installed), as follows:
+You can set up a Git linkage by cloning your private/public repository to a custom folder/directory of your Local Machine using the Command-line interface ([Unix-like](https://github.com/QuCAI-Lab/educational-resources/tree/main/Linux_Essentials) terminal or [Anaconda environment](https://github.com/QuCAI-Lab/educational-resources/tree/main/Conda_Essentials) prompt with [Git](https://anaconda.org/anaconda/git) installed).
 
+## Git clone with different protocols
+
+- There are four possible [protocol choices](https://git-scm.com/book/en/v2/Git-on-the-Server-The-Protocols): Local, HTTP, Secure Shell (SSH) and Git.
+  - Cloning over HTTPS: the protocol uses private key authentication to clone a private repository using a git username and an access token. It is also the git recommend way for cloning public repositories.
+  - Cloning with SSH: the protocol uses SSH keys for authentication.
+
+To clone a public repository over HTTPS:
 ```bash
-cd <dir_pathname> && git clone https://github.com/<your_githubusername>/<repository-name>.git 
+git clone https://github.com/<github_username>/<public_repo_name>.git
 ```
-Note: `<dir_pathname>` is the path of the directory you wish to clone your remote repository to.
+To clone a private repository over HTTPS:
+```bash
+git clone https://github.com/<git_username/private_repo_name>.git
+<username>
+<token>
+```
+Hands-on example cloning this public repository over HTTPS:
+```bash
+git clone https://github.com/qucai-lab/educational-resources.git
+``` 
 
-To vizualize a markdown file, one can use `grip`:
+To clone a repository over SSH:
+```bash
+git clone ssh://<user>@<server>/<project_name>.git
+```
+or
+```bash
+git clone <user>@<server>:<git_username>/<repo_name>.git
+```
+Hands-on example cloning this public repository with a github server over SSH:
+```bash
+git clone git@github.com:qucai-lab/educational-resources.git
+```
 
+# Markdown
+
+After `git clone`, to vizualize a README.md (markdown) file on the web browser, one can use grip via the CLI:
 ```sh
-pip install grip && grip -b <filename>.md
+pip install grip && grip -b README.md
 ```
 
 
@@ -124,27 +155,42 @@ $ git checkout <newbranch>
 
 # Adding a [.gitignore](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files) File
 
-The `.gitignore` file instructs Git to ignore/untrack specific files or folders from a project. Common special characters:
+The `.gitignore` file instructs Git to ignore/untrack specific files or folders from a project.
 
-- `*` denotes a wildcard match (placeholder).
-- `/` is used to ignore pathnames relative to the .gitignore file.
-- `#` the hash symbol denotes the comment syntax.
+- Common special characters:
+  - `*` denotes a wildcard match (placeholder).
+  - `/` is used to ignore pathnames relative to the .gitignore file.
+  - `#` the hash symbol denotes the comment syntax.
 
+- Gitignore Cheat Sheet:
+  - `/filename.txt` will ignore a filename.txt file located in the root directory.
+  - `filename.txt` will ignore all files (located anywhere) named filename.txt.
+  - `filename` will ignore any file or directory named "filename".
+  - `.filename` will ignore any file or directory named ".filename".
+  - `filename*` will ignore all files and directories starting with "filename".
+  - `*.name` will ignore all files (located anywhere) with extension ".name".
+  - `!filename.mdv` will ignore all files with extension .md except the filename.md file.
+  - `dir/` will ignore all directories named dir and all its contents.
+  
 To add a `.gitignore` file to your cloned repository using the command-line interpreter, follow these steps.
 
 1. Navigate to the relative/absolute path of the directory containing the cloned Git repository in your local machine:
 ```sh
-cd <repo_pathname> 
+cd ~/<repo_pathname> 
 ```
 2. Create a .gitignore file:
 ```sh
 touch .gitignore
 ```
+or
+```sh
+cat > .gitignore
+```
 or simply (to open gedit text editor)
 ```sh
 gedit .gitignore
 ```
-Note: after saving, the file will be hidden by default, to view type `ll` in the command-line interpreter.
+Note: after saving, the file will be hidden by default, to view hidden files type `ll` in the command-line interpreter.
 
 3. Add the file to staging area:
 ```
@@ -165,17 +211,19 @@ git config --global core.excludesfile ~/.gitignore_global
 ## Example File
 
 ```gitignore
+
+# Ignoring files whose filename ends with the suffix ~
 *~
 
-# Text files
+# Ignoring text files
 *.txt
 
-# virtualenv
+# Ignoring virtualenv files
 .venv
 venv/
 ENV/
 
-# Jupyter Notebook
+# Ignoring Jupyter Notebook files with extension .ipynb_checkpoints
 .ipynb_checkpoints
 ```
 
@@ -233,7 +281,7 @@ git checkout \<hash-id>
 ```
 using `git log` to find the hash-id, or via
 ```bash
-git reflog \<hash-id
+git reflog <hash-id
 ```
 using `git reflog` to find the hash-id.
 
@@ -575,3 +623,4 @@ With open Atom IDE:
 Created and maintained by [@camponogaraviera][1].
 
 [1]: https://github.com/camponogaraviera
+
