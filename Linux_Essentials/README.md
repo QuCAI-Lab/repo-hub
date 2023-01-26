@@ -191,7 +191,7 @@ $ mkdir <dir-name>
 Tip: the `mkdir` command works in both Unix-like (Linux, macOS) and Windows command-line interpreters.
 
 
-- Deleting a directory:
+- Deleting an empty directory:
 
 ```bash
 $ rmdir <dir-name>
@@ -200,7 +200,7 @@ $ rmdir <dir-name>
 - Deleting a non-empty directory:
 
 ```bash
-$ rm -r <dir-name>
+$ rm -rf <dir-name>
 ```
 
 - Switch to a specific folder/directory:
