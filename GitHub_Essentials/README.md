@@ -1,17 +1,39 @@
-# GitHub_Essentials
+# Table of Contents
 
->![](https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png 'GitHub_Essentials')
->![](https://github.githubassets.com/images/modules/logos_page/Octocat.png) <br />
-The present README is intentionally overkilling for educational purposes. It can be daunting for first-timers. <br />
+- **[Prelims](#)**
+- **[Installing a Git GUI](#)**
+- **[Installing Git from CLI](#)**
+- **[Fork](#)**
+- **[Git Clone](#)**
+- **[Markdown](#)**
+- **[Git Commands](#)**
+- **[The .gitignore File](#)**
+- **[Removing Files](#)**
+- **[Recovering a file](#)**
+- **[Reverting to a Previous Version](#)**
+- **[Pushing Commits to your remote repository](#)**
+- **[Git Merge vs Git Rebase workflow](#)**
+- **[Git cherry-pick](#)**
+- **[Pulling Updates from an Upstream remote repository](#)**
+- **[Issue Tracker](#)**
+- **[Pull Request](#)**
+- **[Atom IDE](#)**
+- **[Contributors](#)**
+
+<br>
+<div align="center">
+  <a href="#"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="placeholder for env. gif" width="200" /></a>
+  <a href="#"><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="placeholder for env. gif" width="200" /></a>
+</div> 
+<br>
+
+>The present README is intentionally overkilling for educational purposes. It can be daunting for first-timers. <br />
 **A quick walkthrough of [GitHub](https://docs.github.com/en/get-started/quickstart/hello-world) and [Git](https://docs.github.com/en/get-started/using-git/about-git) how-tos for dummies. <br /> For more information, resort to the [full reference guide to Git commands](https://git-scm.com/docs) or the [Git Cheat Sheets](https://training.github.com/).**
 
 <br />
-<br />
-
 <div align=center>
   <b><a href="https://en.wikipedia.org/wiki/It%27s_dangerous_to_go_alone!">"It's dangerous to go alone! Take this."</a></b>
 </div>
-
 <br />
 
 
@@ -153,7 +175,7 @@ $ git checkout <newbranch>
 
 <!--- ############################################################################################################################################### -->
 
-# Adding a [.gitignore](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files) File
+# The [.gitignore](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files) File
 
 The `.gitignore` file instructs Git to ignore/untrack specific files or folders from a project.
 
@@ -171,7 +193,9 @@ The `.gitignore` file instructs Git to ignore/untrack specific files or folders 
   - `*.name` will ignore all files (located anywhere) with extension ".name".
   - `!filename.mdv` will ignore all files with extension .md except the filename.md file.
   - `dir/` will ignore all directories named dir and all its contents.
-  
+
+## Adding the .gitignore file
+
 To add a `.gitignore` file to your cloned repository using the command-line interpreter, follow these steps.
 
 1. Navigate to the relative/absolute path of the directory containing the cloned Git repository in your local machine:
@@ -208,7 +232,7 @@ git commit -m "<message>" .gitignore
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
-## Example File
+## Minimal template
 
 ```gitignore
 
@@ -623,4 +647,5 @@ With open Atom IDE:
 Created and maintained by [@camponogaraviera][1].
 
 [1]: https://github.com/camponogaraviera
+
 
