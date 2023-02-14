@@ -17,37 +17,37 @@ Beware: the angle brackets punctuation mark denoted by "`<>`" (voiced chevrons) 
 - Ubuntu version:
 
 ```bash
-$ lsb_release -a
+lsb_release -a
 ```
 
 - Current user:
 
 ```bash
-$ who
+who
 ```
 
 - To display the manual page for a particular command:
 
 ```bash
-$ man <command>
+man <command>
 ```
 
 - To display one-line manual page descriptions:
 
 ```bash
-$ whatis <command>
+whatis <command>
 ```
 
 - To open Gnome file manager in the current directory:
 
 ```bash
-$ nautilus .
+nautilus .
 ```
 
 - Root privileges:
 
 ```bash
-$ sudo su
+sudo su
 ```
 
 - To locate the binary, source, and manual page files for a command:
@@ -70,39 +70,39 @@ which <command>
 - Adding an external repository:
 
 ```bash
-$ sudo add-apt-repository
+sudo add-apt-repository
 ```
 
 - Package Update:
 
 ```bash
-$ sudo apt-get update
+sudo apt-get update
 ```
 
 - Package Installation:
 
 ```bash
-$ sudo apt-get install <package-name>
+sudo apt-get install <package-name>
 ```
 
 - Packakge Uninstallation
 ```bash
-$ sudo apt-get purge --auto-remove <file>
+sudo apt-get purge --auto-remove <file>
 ```
 and (to remove the aptitude cache)
 ```bash
-$ sudo apt-get clean
+sudo apt-get clean
 ```
 Note: the flag `--purge` remove the configuration files, and the flag `--auto-remove` removes associated packages.
 
 - List installed packages:
 ```bash
-$ dpkg --list
+dpkg --list
 ```
 Note: press 'q' to exit mode.
 or (to locate a file in dpkg list)
 ```bash
-$ dpkg --list | grep file
+dpkg --list | grep file
 ```
 or 
 ```bash
@@ -120,57 +120,55 @@ apt list -a <package_name>
 
 (tar -xvzf to unpack a .gz file)
 ```bash
-$ tar -xvzf <filename>.tar.gz
+tar -xvzf <filename>.tar.gz
 ```
 (tar -xvjf to unpack a .bz2 file)
 ```bash
-$ tar -xvjf <filename>.tar.bz2
+tar -xvjf <filename>.tar.bz2
 ```
 or (tar -xf to unpack a .xz file)
 ```bash
-$ tar -xf <filename>.tar.xz
+tar -xf <filename>.tar.xz
 ```
 or (gunzip to unpack .gzip file)
 ```bash
-$ gunzip <filename>.gz
+gunzip <filename>.gz
 ```
 
 - Installing:
 ```bash
-$ ./configure
-$ make
-$ sudo make install
+./configure && make && sudo make install
 ```
 
 ## .sh files:
 
 Grant execute permission:
 ```bash
-$ chmod +x <file>.sh
+chmod +x <file>.sh
 ```
 
 Run/install the file:
 ```bash
-$ ./<file>.sh
+./<file>.sh
 ```
 
 ## Debian packages:
 
 - Install:
 ```bash
-$ sudo dpkg -i package.deb
+sudo dpkg -i package.deb
 ```
 Or 
 ```bash
-$ sudo dpkg --install package.deb
+sudo dpkg --install package.deb
 ```
 - Remove:
 ```bash
-$ sudo dpkg -r package.deb
+sudo dpkg -r package.deb
 ```
 Or 
 ```bash
-$ sudo dpkg --remove package.deb
+sudo dpkg --remove package.deb
 ```
 
 <!--- ####################################################################################################################################################################### -->
@@ -180,13 +178,13 @@ $ sudo dpkg --remove package.deb
 - Path of the current working directory:
 
 ```bash
-$ pwd
+pwd
 ```
 
 - Creating a folder/directory:
 
 ```bash
-$ mkdir <dir-name>
+mkdir <dir-name>
 ```
 Tip: the `mkdir` command works in both Unix-like (Linux, macOS) and Windows command-line interpreters.
 
@@ -194,19 +192,19 @@ Tip: the `mkdir` command works in both Unix-like (Linux, macOS) and Windows comm
 - Deleting an empty directory:
 
 ```bash
-$ rmdir <dir-name>
+rmdir <dir-name>
 ```
 
 - Deleting a non-empty directory:
 
 ```bash
-$ rm -rf <dir-name>
+rm -rf <dir-name>
 ```
 
 - Switch to a specific folder/directory:
 
 ```bash
-$ cd <dir-name>
+cd <dir-name>
 ```
 or (if the directory name has spaces)
 ```bash
@@ -216,25 +214,25 @@ cd '<dir name with space>'
 - Switching to Home directory:
 
 ```bash
-$ cd ~
+cd ~
 ```
 
 - Switch to root directory:
 
 ```bash
-$ cd /
+cd /
 ```
 
 - Switch to one level up dir.:
 
 ```bash
-$ cd ..
+cd ..
 ```
 
 - Switch to the previous dir.:
 
 ```bash
-$ cd -
+cd -
 ```
 
 <!--- ####################################################################################################################################################################### -->
@@ -244,25 +242,25 @@ $ cd -
 - Listing files in the current directory:
 
 ```bash
-$ ls
+ls
 ```
 or (to list hidden files)
 ```bash
-$ ll
+ll
 ```
 or (to list content information)
 ```bash
-$ ls -l
+ls -l
 ```
 or (to list the allocated size of each file, in blocks)
 ```bash
-$ ls -s
+ls -s
 ```
 
 - To list a specific file in the current directory:
 
 ```bash
-ls <filename>
+<filename>
 ```
 or
 ```bash
@@ -296,7 +294,7 @@ ls -l <filename>
 - To read a file (.txt, .md, .yml):
 
 ```bash
-$ less <filename>
+less <filename>
 ```
 or
 ```bash
@@ -305,35 +303,35 @@ nano <filename>
 or (to open the file with gedit)
 
 ```bash
-$ gedit <filename>
+gedit <filename>
 ```
 
 - To read a .pdf file:
 
 ```bash
-$ evince <filename.pdf>
+evince <filename.pdf>
 ```
 
 - Creating a `.txt` file:
 
 ```bash
-$ cat > <filename>.txt 
+cat > <filename>.txt 
 ```
 or (to create and add a text string to the file)
 ```bash
-$ echo "This is a string" > <filename>.txt
+echo "This is a string" > <filename>.txt
 ```
 
 - Updating a `.txt` file:
 
 ```bash
-$ echo "new text string" >> <filename>.txt
+echo "new text string" >> <filename>.txt
 ```
 
 - Cloning a file to the current directory:
 
 ```bash
-$ cp -iv ~/<path-dir-name>/<filename> .
+cp -iv ~/<path-dir-name>/<filename> .
 ```
 
 Note1: the `-i` flag stands for `interactive mode` and enables the user to choose to overwrite the file.
@@ -345,44 +343,44 @@ Note3: flags can be concatenated, such as in `-iv`.
 - Cloning a file to a different directory:
 
 ```bash
-$ cp -iv ~/<path-dir-name> ~/<path-new-dir>/
+cp -iv ~/<path-dir-name> ~/<path-new-dir>/
 ```
 or (for a file in the current directory)
 ```bash
-$ cp -i filename ~/<path-new-dir>/
+cp -i filename ~/<path-new-dir>/
 ```
 
 - Cloning all files from a specific dir. to a new dir.:
 
 ```bash
-$ cp -a ~/<path-dir-name> ~/<path-new-dir>/
+cp -a ~/<path-dir-name> ~/<path-new-dir>/
 ```
 
 - Moving an entire directory:
 
 ```bash
-$ mv -Ri ~/<path-dir-name> ~/<path-new-dir>/
+mv -Ri ~/<path-dir-name> ~/<path-new-dir>/
 ```
 Note: the `-R` flag stands for `recursive` mode.
 
 - Renaming a file:
 
 ```bash
-$ mv <filename.extension> <new-filename.extension>
+mv <filename.extension> <new-filename.extension>
 ```
 
 - Deleting a file:
 
 ```bash
-$ rm <filename>
+rm <filename>
 ```
 or (to delete all files from the current directory)
 ```bash
-$ rm *
+rm *
 ```
 or (to delete all files with `.png` extension in interactive mode)
 ```bah
-$ rm -i *.png
+rm -i *.png
 ```
 
 <!--- ####################################################################################################################################################################### -->
@@ -392,17 +390,17 @@ $ rm -i *.png
 - Current system info:
 
 ```bash
-$ uname -a
+uname -a
 ```
 
 - System's memory usage:
 
 ```bash
-$ free -h
+free -h
 ```
 or
 ```bash
-$ free -m
+free -m
 ```
 ```
 'free' = wasted memory (not being used).
@@ -414,28 +412,39 @@ $ free -m
 - CPU info (clock, cores, L2 and L3 cache memory...):
 
 ```bash
-$ lscpu
+lscpu
 ```
 Note: total threads = CPU core * threads per core.
 
 - PCI (Peripheral Component Interconnect) buses (Wireless adapter, GPU...):
 
 ```bash
-$ lspci
+lspci
 ```
-or (for an in-depth description)
+or 
 ```bash
-$ lshw 
+lspci -v -s <id>
 ```
-or (for short)
+
+For in-depth description:
 ```bash
-$ lshw - short
+lshw 
+```
+or (for short)  
+```bash
+lshw -short
 ```
 
 - On-board and off-board graphics card:
 
 ```bash
-$ sudo lshw -C display
+sudo lshw -C display
+```
+
+- Nvidia Graphics Card:
+
+```jupyter
+nvidia-smi
 ```
 
 <!--- ####################################################################################################################################################################### -->
@@ -445,29 +454,29 @@ $ sudo lshw -C display
 - Top Processes:
 
 ```bash
-$ top
+top
 ```
 
 - Running softwares:
 
 ```bash
-$ ps -A 
+ps -A 
 ```
 or (for a specific software)
 ```bash
-$ ps aux | grep <software_name>
+ps aux | grep <software_name>
 ```
 
 - Display software PID:
 
 ```bash
-$ pgrep <software_name>
+pgrep <software_name>
 ```
 
 - To kill a process:
 
 ```bash
-$ sudo kill -9 <software_PID>
+sudo kill -9 <software_PID>
 ```
 
 
@@ -478,30 +487,22 @@ $ sudo kill -9 <software_PID>
 - To list partition table:
 
 ```bash
-$ sudo fdisk -l
+sudo fdisk -l
 ```
 
 - To list mount points (mounted drives/filesystem):
 
 ```bash
-$ df -h
+df -h
 ```
 
 - To mount a partition:
 
 ```bash
-$ sudo mount /dev/sdbX
+sudo mount /dev/sdbX
 ```
 
 <!--- ####################################################################################################################################################################### -->
-
-## Flags on Google Colab 
-
-- Graphics Card:
-
-```jupyter
-!nvidia-smi
-```
 
 # Contributors 
 
