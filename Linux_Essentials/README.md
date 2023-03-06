@@ -6,9 +6,33 @@
 
 <br />
 
-<!--- ####################################################################################################################################################################### -->
 
 Check out [explainshell.com](https://explainshell.com/) for an interactive alternative to Linux man pages that enables you to quick parse queried commands.
+
+<!--- ####################################################################################################################################################################### -->
+
+# Keyboard shortcuts
+
+For QWERTY-based keyboard layout on linux system.
+
+1. `Ctrl+Shift+C`: copy selection. On Windows only `Ctrl+C`.
+2. `Ctrl+Shift+V`: paste selection. On Windows only `Ctrl+V`.
+3. `Ctrl+Shift+T`: open a new tab.
+4. `Ctrl+PgUp`: switch to the previous tab.
+5. `Ctrl+PgDn`: switch to the next tab.
+6. `Ctrl+Shift+W`: close the current tab.
+7. `Ctrl+R`: history search mode to show the last command matching provided characters.
+8. `Ctrl+G`: leave the above history search mode.
+9. `Ctrl+I or Tab`: trigger command line suggestion.
+10. `Ctrl+A` or Home: go to the start of the command line.
+11. `Ctrl+E` or End: Go to the end of the command line.
+12. `Ctrl+W` or `Alt+Backspace`: to delete an entire word/command backward (before the cursor).
+13. `Alt+D`: to delete an entire word/command onward (after the cursor).
+14. `Ctrl+U`: delete all commands.
+15. `Ctrl+C`: send a SIGINT signal to cancel/terminate the current process.
+
+<!--- ####################################################################################################################################################################### -->
+
 
 # Ubuntu Prelims 
 
@@ -503,6 +527,7 @@ sudo mount /dev/sdbX
 ```
 
 <!--- ####################################################################################################################################################################### -->
+
 
 # Contributors 
 
