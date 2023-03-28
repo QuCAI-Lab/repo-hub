@@ -150,6 +150,7 @@ pip install grip && grip -b README.md
 - [git diff](https://git-scm.com/docs/git-diff) - Show differences/changes between the original file and the new version of said file before track/stage (`git add`) and commit (`git commit`).
 - [git restore \<filename1> \<filename2> ...](https://git-scm.com/docs/git-restore) - To discard untracked/unstaged (**before `git add`**) and uncommitted (**before `git commit`**) file changes in the working directory and restore the originals from the index (Git staging area).
 - [git add --all](https://git-scm.com/docs/git-add) - To **Track/stage** all changed (or new) files to the staging area/index.
+- [git add -u](https://git-scm.com/docs/git-add#Documentation/git-add.txt--u) - To update changes ignoring untracked files.
 - [git restore --staged \<filename>](https://git-scm.com/docs/git-restore) - Restores a file from HEAD after it has been staged (**after `git add`**) and **before `git commit`**.
 - [git fsck](https://git-scm.com/docs/git-fsck) - File system check for dangling blobs (a staged file that was not committed). Used to [restore a file](https://git-scm.com/book/en/v2/Git-Internals-Maintenance-and-Data-Recovery) after it has been staged (**after git add**) and after **hard reset** (`git reset --hard HEAD`) but **before `git commit`**.
 - [git show \<id> > <filename>.txt](https://git-scm.com/docs/git-show) - Export/save data of a file change to an external file. Use `git fsck` to find the id.
@@ -163,7 +164,7 @@ pip install grip && grip -b README.md
 - [git checkout \<branch-name>](https://git-scm.com/docs/git-checkout) - Switch to an existing branch named `<branch-name>`.
 - [git checkout -b \<newbranch>](https://git-scm.com/docs/git-checkout) - Create a new branch named `<newbranch>` and then checkout.
 - [git pull](https://git-scm.com/docs/git-pull) - A shortcut for completing both `$ git fetch` and `$ git merge` or `$ git rebase` in the same command. **Make sure to run this command before git push to sync your local clone with the upstream repository.**
-- [git push -u origin \<branch-name>](https://git-scm.com/docs/git-push) - Push your changes to a branch named `<branch-name>` from the remote (cloud-based) GitHub repository.
+- [git push -u <remote> \<branch-name>](https://git-scm.com/docs/git-push) - Push your changes to a branch named `<branch-name>` from the remote (cloud-based) GitHub repository.
 - [git reset](https://git-scm.com/docs/git-reset) - Reverts the **HEAD branch** (current branch).
 
 
@@ -353,9 +354,9 @@ git clone # (Optional) If you haven't cloned the remote repository yet.
 git status # (Optional) To show status of the local repository.
 git diff # (Optional) To show changes made to the local repository.
 
-git add --all # To add all changes (new/untracked and modified files) to the Git staging area.
+git add -u # To add all changes (new/untracked and modified files) to the Git staging area.
 git commit -m "<commit_message>" # To define the topic of your commit.
-git push -u origin <branch-name> # Push local changes to the <branch-name> branch of the remote repository.
+git push -u <remote> <branch-name> # Push local changes to the <branch-name> branch of the remote repository.
 ```
 
 - Get your password (access token) at: `Settings` >> `Developer settings` >> `Personal access tokens` >> `Generate new token` >> `Select scopes (repo)`.
@@ -488,6 +489,7 @@ git push main # Push your local changes to your remote repository.
 To bring only specific commits from a feature branch into a target branch (main, dev, etc.), run:
 
 ```bash
+git remote add origin <forked_repo_url> # Remote of the forked repo.
 git checkout <feature-branch> # Switch to the branch one wants to bring commits from. 
 git log # Show the id of the commits one wants to bring.
 git checkout <target-branch> # Switch to the branch one wants to move the commits to.
@@ -523,6 +525,7 @@ To [sync](https://docs.github.com/github/collaborating-with-issues-and-pull-requ
 cd <repo-name> # If you have already forked the repo. Otherwise, run 'git init' to initialize an empty local repo. 
 git remote -v # To list the current configured remote repository for your fork.
 git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY # Assigning "upstream" as the remote repository that will be synced with the fork.
+git remote add origin <forked_repo_url> # Remote of the forked repo.
 
 git fetch upstream # To retrieve all the new remote-tracking branches and tags updates from the upstream repository.
 git checkout <branch-name> # To switch to the existing remote-tracking branch (i.e., the branch fetched from the remote repository) named "<branch-name>".
