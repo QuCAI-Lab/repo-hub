@@ -22,6 +22,7 @@
 - [Conda Essentials](Conda_Essentials).
 - [GitHub Essentials](GitHub_Essentials).
 - [Linux Essentials](Linux_Essentials).
+- [Open Quantum Systems with Qiskit Defaults](https://github.com/QuCAI-Lab/open-quantum-systems).
 
 <!-- Author(s): -->
 # Contributors
