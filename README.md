@@ -13,7 +13,7 @@
 <!-- Title: -->
 <div align='center'>
   <h1> Educational Resources </h1>
-  <h2> NTNU QuCAI-Lab Crash Courses </h2>
+  <h2> QuCAI-Lab Crash Courses </h2>
 </div>
 <br>
 
@@ -23,10 +23,11 @@
 - [GitHub Essentials](GitHub_Essentials).
 - [Linux Essentials](Linux_Essentials).
 - [Open Quantum Systems with Qiskit Defaults](https://github.com/QuCAI-Lab/open-quantum-systems).
+- [A Didactic Guide to the IBM 2021 Open Science Prize](https://github.com/QuCAI-Lab/ibm2021-open-science-prize).
 
 <!-- Author(s): -->
 # Contributors
 
-Educational Resources was conceived by [Lucas Camponogara Viera](https://www.linkedin.com/in/camponogaralucas/) at [QuCAI-Lab](https://qucai-lab.github.io), [NTNU](https://www.ntnu.edu.tw/) and is maintained by [@camponogaraviera][1]. 
+Educational Resources was conceived by [Lucas Camponogara Viera](https://www.linkedin.com/in/camponogaralucas/) at [QuCAI-Lab](https://qucai-lab.github.io) and is maintained by [@camponogaraviera][1]. 
 
 [1]: https://github.com/camponogaraviera
