@@ -22,9 +22,10 @@
 - [Conda Essentials](Conda_Essentials).
 - [GitHub Essentials](GitHub_Essentials).
 - [Linux Essentials](Linux_Essentials).
-- [Crash Course - Circuit Quantum Electrodynamics.](https://github.com/QuCAI-Lab/circuit-qed).
-- [Crash Course - Open Quantum Systems.](https://github.com/QuCAI-Lab/open-quantum-systems).
-- [Crash Course - Quantum Circuit Theory.](https://github.com/QuCAI-Lab/quantum-circuit-theory).
+- [Linear Algebra for Quantum Computing](https://github.com/QuCAI-Lab/linear-algebra).
+- [Quantum Circuit Theory](https://github.com/QuCAI-Lab/quantum-circuit-theory).
+- [Open Quantum Systems](https://github.com/QuCAI-Lab/open-quantum-systems).
+- [Circuit Quantum Electrodynamics](https://github.com/QuCAI-Lab/circuit-qed).
 - [A Didactic Guide to the IBM 2021 Open Science Prize](https://github.com/QuCAI-Lab/ibm2021-open-science-prize).
 
 <!-- Author(s): -->
