@@ -19,14 +19,21 @@
 
 # Contents
 
-- [Conda Essentials](Conda_Essentials).
-- [GitHub Essentials](GitHub_Essentials).
-- [Linux Essentials](Linux_Essentials).
-- [Linear Algebra for Quantum Computing](https://github.com/QuCAI-Lab/linear-algebra).
-- [Quantum Circuit Theory](https://github.com/QuCAI-Lab/quantum-circuit-theory).
-- [Open Quantum Systems](https://github.com/QuCAI-Lab/open-quantum-systems).
-- [Circuit Quantum Electrodynamics](https://github.com/QuCAI-Lab/circuit-qed).
-- [A Didactic Guide to the IBM 2021 Open Science Prize](https://github.com/QuCAI-Lab/ibm2021-open-science-prize).
+- CS:
+  - [Conda Essentials](Conda_Essentials).
+  - [GitHub Essentials](GitHub_Essentials).
+  - [Linux Essentials](Linux_Essentials).
+
+- AI:
+  - [Neural network theory and backpropagation algorithm equations](https://github.com/camponogaraviera/machine-learning/blob/dev/machine_learning_projects/Theory/theory.ipynb).
+  - [NumPy-based multilayer perceptron neural network for image classification](https://github.com/camponogaraviera/machine-learning/blob/dev/machine_learning_projects/Classification/fmnist_backprop_numpy/fmnist_backprop_numpy.ipynb).
+
+- Quantum:
+  - [Linear Algebra for Quantum Computing](https://github.com/QuCAI-Lab/linear-algebra).
+  - [Quantum Circuit Theory](https://github.com/QuCAI-Lab/quantum-circuit-theory).
+  - [Open Quantum Systems](https://github.com/QuCAI-Lab/open-quantum-systems).
+  - [Circuit Quantum Electrodynamics](https://github.com/QuCAI-Lab/circuit-qed).
+  - [A Didactic Guide to the IBM 2021 Open Science Prize](https://github.com/QuCAI-Lab/ibm2021-open-science-prize).
 
 <!-- Author(s): -->
 # Contributors
