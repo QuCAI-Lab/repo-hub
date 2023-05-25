@@ -35,6 +35,10 @@
   - [Circuit Quantum Electrodynamics](https://github.com/QuCAI-Lab/circuit-qed).
   - [A Didactic Guide to the IBM 2021 Open Science Prize](https://github.com/QuCAI-Lab/ibm2021-open-science-prize).
 
+- Quantum AI:
+  - [Variational Quantum Eigensolver](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project).
+  - [Quantum Kernel Alignment](https://github.com/QuCAI-Lab/adapt-qka/blob/dev/supplementary.ipynb).
+
 <!-- Author(s): -->
 # Contributors
 
