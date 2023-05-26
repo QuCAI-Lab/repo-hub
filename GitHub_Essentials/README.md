@@ -1,24 +1,25 @@
 # Table of Contents
 
-- **[Prelims](#)**
-- **[Installing a Git GUI](#)**
-- **[Installing Git from CLI](#)**
-- **[Fork](#)**
-- **[Git Clone](#)**
-- **[Markdown](#)**
-- **[Git Commands](#)**
-- **[The .gitignore File](#)**
-- **[Removing Files](#)**
-- **[Recovering a file](#)**
-- **[Reverting to a Previous Version](#)**
-- **[Pushing Commits to your remote repository](#)**
-- **[Git Merge vs Git Rebase workflow](#)**
-- **[Git cherry-pick](#)**
-- **[Pulling Updates from an Upstream remote repository](#)**
-- **[Issue Tracker](#)**
-- **[Pull Request](#)**
-- **[Atom IDE](#)**
-- **[Contributors](#)**
+- [Prelims](#)
+- [Installing a Git GUI](#)
+- [Installing Git from CLI](#)
+- [Fork](#)
+- [Git Clone](#)
+- [Markdown](#)
+- [Git Commands](#)
+- [The .gitignore File](#)
+- [Removing Files](#)
+- [Recovering a file](#)
+- [Reverting to a Previous Version](#)
+- [Pushing Commits to your remote repository](#)
+- [Git Merge vs Git Rebase workflow](#)
+- [Git cherry-pick](#)
+- [Pulling Updates from an Upstream remote repository](#)
+- [Resolving conflicting changes](#)
+- [Issue Tracker](#)
+- [Pull Request](#)
+- [Atom IDE](#)
+- [Contributors](#)
 
 <br>
 <div align="center">
@@ -184,16 +185,19 @@ The `.gitignore` file instructs Git to ignore/untrack specific files or folders 
   - `*` denotes a wildcard match (placeholder).
   - `/` is used to ignore pathnames relative to the .gitignore file.
   - `#` the hash symbol denotes the comment syntax.
-
+  
 - Gitignore Cheat Sheet:
-  - `/filename.txt` will ignore a filename.txt file located in the root directory.
-  - `filename.txt` will ignore all files (located anywhere) named filename.txt.
-  - `filename` will ignore any file or directory named "filename".
-  - `.filename` will ignore any file or directory named ".filename".
-  - `filename*` will ignore all files and directories starting with "filename".
-  - `*.name` will ignore all files (located anywhere) with extension ".name".
-  - `!filename.mdv` will ignore all files with extension .md except the filename.md file.
-  - `dir/` will ignore all directories named dir and all its contents.
+  - To ignore all files (located anywhere) with extension ".ext": *.ext
+  - To ignore all files with extension ".ext" except the "filename.ext" file: !filename.ext
+  - To ignore all directories named ".dir" and all its contents: .dir/ 
+  - To ignore a "filename.ext" file located in the root directory: /filename.ext
+  - To ignore any file (located anywhere) named "filename.ext": filename.ext
+  - To ignore any file or directory named ".filename": .filename
+  - To ignore all files and directories starting with "filename": filename*
+
+- Receipt for pushing after updating the .gitignore file:
+  - git rm -r --cached . # To remove already tracked files from Git cache. 
+  - git add --all :/
 
 ## Adding the .gitignore file
 
@@ -559,6 +563,23 @@ git push -f origin <branch-name> # To update your remote forked repository.
 
 <!--- ############################################################################################################################################### -->
 
+# Resolving conflicting changes
+  
+When a file was changed in the remote repository (edited on the web browser) and in the local repository (personal computer), follow this steps. Supposing the changed file is on branch `main`:
+  
+```bash
+git add --all
+git commit -m "Commit message"
+git fetch
+git merge origin/main
+```
+Open the README.md file in a text editor and remove the conflict markers. They will look something like this:
+```bash
+<<<<<<< HEAD
+>>>>>>> <commit-hash>
+```
+  
+<!--- ############################################################################################################################################### -->
 
 # [Issue Tracker](https://docs.github.com/en/issues/tracking-your-work-with-issues/creating-an-issue)
 
@@ -570,7 +591,6 @@ There are two common ways to report a bug:
 
 
 <!--- ############################################################################################################################################### -->
-
 
 # [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
 
@@ -629,7 +649,6 @@ The admin or CI/CD tool of the upstream (original) repository will review the pu
 
 
 <!--- ############################################################################################################################################### -->
-
 
 # Atom IDE
 
