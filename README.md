@@ -25,8 +25,8 @@
   - [Linux Essentials](Linux_Essentials).
 
 - AI:
-  - [Neural network theory and backpropagation algorithm equations](https://github.com/camponogaraviera/machine-learning/blob/dev/machine_learning_projects/Theory/theory.ipynb).
-  - [NumPy-based multilayer perceptron neural network for image classification](https://github.com/camponogaraviera/machine-learning/blob/dev/machine_learning_projects/Classification/fmnist_backprop_numpy/fmnist_backprop_numpy.ipynb).
+  - [Vanilla NumPy MLP neural network with SGD and Backpropagation](https://github.com/camponogaraviera/vanilla-numpy-backprop-mlp/blob/dev/fmnist_backprop_numpy.ipynb).
+  - [Neural network theory and backpropagation algorithm equations](https://github.com/camponogaraviera/vanilla-numpy-backprop-mlp/blob/dev/theory.ipynb).
 
 - Quantum:
   - [Linear Algebra for Quantum Computing](https://github.com/QuCAI-Lab/linear-algebra).
