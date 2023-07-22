@@ -417,6 +417,16 @@ rm -i *.png
 uname -a
 ```
 
+- Distribution info:
+```bash
+uname -m && cat /etc/*release
+```
+
+- Kernel version:
+```bash
+uname -srmv
+```
+
 - System's memory usage:
 
 ```bash
