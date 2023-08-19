@@ -25,8 +25,8 @@
   - [Linux Essentials](Linux_Essentials).
 
 - AI:
-  - [Vanilla NumPy MLP neural network with SGD and Backpropagation](https://github.com/camponogaraviera/vanilla-numpy-mlp/blob/dev/fmnist_backprop_numpy.ipynb).
-  - [Neural network theory and backpropagation algorithm equations](https://github.com/camponogaraviera/vanilla-numpy-mlp/blob/dev/theory.ipynb).
+  - [Vanilla NumPy MLP neural network with SGD and Backpropagation](https://github.com/QuCAI-Lab/vanilla-numpy-mlp).
+  - [Neural network theory and backpropagation algorithm equations](https://github.com/QuCAI-Lab/vanilla-numpy-mlp/blob/dev/theory.ipynb).
 
 - Quantum:
   - [Linear Algebra for Quantum Computing](https://github.com/QuCAI-Lab/linear-algebra).
