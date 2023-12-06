@@ -19,21 +19,22 @@
 
 # Contents
 
-- CS:
+- Dev Tools:
   - [Conda Essentials](Conda_Essentials).
   - [GitHub Essentials](GitHub_Essentials).
   - [Linux Essentials](Linux_Essentials).
-
-- AI:
-  - [Vanilla NumPy MLP neural network with SGD and Backpropagation](https://github.com/QuCAI-Lab/vanilla-numpy-mlp).
-  - [Neural network theory and backpropagation algorithm equations](https://github.com/QuCAI-Lab/vanilla-numpy-mlp/blob/dev/theory.ipynb).
-
-- Quantum:
+ 
+- Foundations of Quantum Computing:
   - [Linear Algebra for Quantum Computing](https://github.com/QuCAI-Lab/linear-algebra).
   - [Quantum Circuit Theory](https://github.com/QuCAI-Lab/quantum-circuit-theory).
   - [Open Quantum Systems](https://github.com/QuCAI-Lab/open-quantum-systems).
 
-- Quantum ML:
+- Classical Machine Learning:
+  - [Vanilla NumPy MLP neural network with SGD and Backpropagation](https://github.com/QuCAI-Lab/vanilla-numpy-mlp).
+  - [Neural network theory and backpropagation algorithm equations](https://github.com/QuCAI-Lab/vanilla-numpy-mlp/blob/dev/theory.ipynb).
+  - [Notes on Reinforcement Learning](https://github.com/QuCAI-Lab/the-world-of-rl).
+
+- Quantum Machine Learning:
   - [Variational Quantum Eigensolver](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project).
   - [Quantum Kernel Alignment](https://github.com/QuCAI-Lab/adapt-qka/blob/dev/supplementary.ipynb).
 
