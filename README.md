@@ -38,6 +38,11 @@
   - [Variational Quantum Eigensolver](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project).
   - [Quantum Kernel Alignment](https://github.com/QuCAI-Lab/adapt-qka/blob/dev/supplementary.ipynb).
 
+- Challenges
+  - [Quantum Algorithm Grand Challenge](https://github.com/QuCAI-Lab/qagc).
+  - [IBM Quantum Spring Challenge 2022](https://github.com/QuCAI-Lab/ibm2022-quantum-spring-challenge).
+  - [QHack2022 Coding Challenge](https://github.com/QuCAI-Lab/QHack2022).
+
 <!-- Author(s): -->
 # Contributors
 
