@@ -13,7 +13,6 @@
 <!-- Title: -->
 <div align='center'>
   <h1> Educational Resources </h1>
-  <h2> QuCAI-Lab Crash Courses </h2>
 </div>
 <br>
 
@@ -40,12 +39,6 @@
 
 - Challenges
   - [Quantum Algorithm Grand Challenge](https://github.com/QuCAI-Lab/qagc).
+  - [Qiskit Global Summer School 2022](https://github.com/QuCAI-Lab/qiskit2022-global-summer-school).
   - [IBM Quantum Spring Challenge 2022](https://github.com/QuCAI-Lab/ibm2022-quantum-spring-challenge).
-  - [QHack2022 Coding Challenge](https://github.com/QuCAI-Lab/QHack2022).
-
-<!-- Author(s): -->
-# Contributors
-
-Educational Resources was conceived by [Lucas Camponogara Viera](https://www.linkedin.com/in/camponogaralucas/) at [QuCAI-Lab](https://qucai-lab.github.io) and is maintained by [@camponogaraviera][1]. 
-
-[1]: https://github.com/camponogaraviera
+  - [QHack2022 Coding Challenges](https://github.com/QuCAI-Lab/QHack2022).
