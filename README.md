@@ -19,14 +19,17 @@
 # Contents
 
 - Dev Tools:
-  - [Conda Essentials](Conda_Essentials).
-  - [GitHub Essentials](GitHub_Essentials).
-  - [Linux Essentials](Linux_Essentials).
+  - [Conda Essentials](Conda_Essentials/README.md).
+  - [GitHub Essentials](GitHub_Essentials/README.md).
+  - [Linux Essentials](Linux_Essentials/README.md).
  
 - Foundations of Quantum Computing:
   - [Linear Algebra for Quantum Computing](https://github.com/QuCAI-Lab/linear-algebra).
   - [Quantum Circuit Theory](https://github.com/QuCAI-Lab/quantum-circuit-theory).
   - [Open Quantum Systems](https://github.com/QuCAI-Lab/open-quantum-systems).
+ 
+- Circuit Quantum Electrodynamics:
+  - [cQED](https://github.com/QuCAI-Lab/circuit-qed). 
 
 - Classical Machine Learning:
   - [Vanilla NumPy MLP neural network with SGD and Backpropagation](https://github.com/QuCAI-Lab/vanilla-numpy-mlp).
