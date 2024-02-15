@@ -1,9 +1,7 @@
 <!-- Badges: -->
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?logo=paypal&style=flat-square)](https://www.paypal.me/CamponogaraViera/100)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](#)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-orange?style=flat-square)](https://github.com/QuCAI-Lab/educational-resources/pulls)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/QuCAI-Lab/educational-resources/graphs/commit-activity)
-[![License](https://img.shields.io/github/license/QuCAI-Lab/educational-resources.svg?logo=Apache&style=flat-square)](LICENSE.md)
 
 <!-- Logo: -->
 <div align="center">
@@ -45,3 +43,4 @@
   - [Qiskit Global Summer School 2022](https://github.com/QuCAI-Lab/qiskit2022-global-summer-school).
   - [IBM Quantum Spring Challenge 2022](https://github.com/QuCAI-Lab/ibm2022-quantum-spring-challenge).
   - [QHack2022 Coding Challenges](https://github.com/QuCAI-Lab/QHack2022).
+  - [IBM 2021 Open Science Prize](https://github.com/QuCAI-Lab/ibm2021-open-science-prize).
