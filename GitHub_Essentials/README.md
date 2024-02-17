@@ -1,3 +1,19 @@
+<br>
+<div align="center">
+  <a href="#"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="placeholder for env. gif" width="200" /></a>
+  <a href="#"><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="placeholder for env. gif" width="200" /></a>
+</div> 
+<br>
+
+>The present README is intentionally overkilling for educational purposes. It can be daunting for first-timers. <br />
+**A quick walkthrough of [GitHub](https://docs.github.com/en/get-started/quickstart/hello-world) and [Git](https://docs.github.com/en/get-started/using-git/about-git) how-tos for dummies. <br /> For more information, resort to the [full reference guide to Git commands](https://git-scm.com/docs) or the [Git Cheat Sheets](https://training.github.com/).**
+
+<br />
+<div align=center>
+  <b><a href="https://en.wikipedia.org/wiki/It%27s_dangerous_to_go_alone!">"It's dangerous to go alone! Take this."</a></b>
+</div>
+<br />
+
 # Table of Contents
 
 - [Prelims](#)
@@ -21,25 +37,7 @@
 - [Atom IDE](#)
 - [Contributors](#)
 
-<br>
-<div align="center">
-  <a href="#"><img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Logo.png" alt="placeholder for env. gif" width="200" /></a>
-  <a href="#"><img src="https://github.githubassets.com/images/modules/logos_page/Octocat.png" alt="placeholder for env. gif" width="200" /></a>
-</div> 
-<br>
-
->The present README is intentionally overkilling for educational purposes. It can be daunting for first-timers. <br />
-**A quick walkthrough of [GitHub](https://docs.github.com/en/get-started/quickstart/hello-world) and [Git](https://docs.github.com/en/get-started/using-git/about-git) how-tos for dummies. <br /> For more information, resort to the [full reference guide to Git commands](https://git-scm.com/docs) or the [Git Cheat Sheets](https://training.github.com/).**
-
-<br />
-<div align=center>
-  <b><a href="https://en.wikipedia.org/wiki/It%27s_dangerous_to_go_alone!">"It's dangerous to go alone! Take this."</a></b>
-</div>
-<br />
-
-
 <!--- ############################################################################################################################################### -->
-
 
 # Prelims
 
