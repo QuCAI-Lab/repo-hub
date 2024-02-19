@@ -8,13 +8,14 @@
   <a href="https://qucai-lab.github.io/"><img src="https://github.com/QuCAI-Lab/qucai-lab.github.io/blob/main/assets/QuCAI-Lab.png" /></a>
 </div>
 
-<!-- Title: -->
-<div align='center'>
-  <h1> Educational Resources </h1>
-</div>
-<br>
+<p align="center">
+  <h1 align="center"> QuCAI-Lab </h1>
+  <h2 align="center">Quantum-Classical Artificial Intelligence Laboratory </h2>
+  <h3 align="center">Bridging the Gap Between Theory and Implementation of Quantum Computing and Machine Learning </h3>
+</p>
+<br />
 
-# Contents
+# &nbsp; <a href="#"><img valign="middle" height="45px" src="https://img.icons8.com/physics" width="45" hspace="0px" vspace="0px"></a> Open Source Projects <a name="Research" />  
 
 - Dev Tools:
   - [Conda Essentials](Conda_Essentials/README.md).
@@ -22,25 +23,25 @@
   - [Linux Essentials](Linux_Essentials/README.md).
  
 - Foundations of Quantum Computing:
-  - [Linear Algebra for Quantum Computing](https://github.com/QuCAI-Lab/linear-algebra).
-  - [Quantum Circuit Theory](https://github.com/QuCAI-Lab/quantum-circuit-theory).
-  - [Open Quantum Systems](https://github.com/QuCAI-Lab/open-quantum-systems).
+  - [Linear Algebra for Quantum Computing](https://github.com/QuCAI-Lab/linear-algebra)
+  - [Quantum Circuit Theory and Implementations](https://github.com/QuCAI-Lab/quantum-circuit-theory)
+  - [Open Quantum Systems](https://github.com/QuCAI-Lab/open-quantum-systems)
  
 - Circuit Quantum Electrodynamics:
-  - [cQED](https://github.com/QuCAI-Lab/circuit-qed). 
+  - [Circuit Quantum Electrodynamics (cQED)](https://github.com/QuCAI-Lab/circuit-qed)
 
 - Classical Machine Learning:
-  - [Vanilla NumPy MLP neural network with SGD and Backpropagation](https://github.com/QuCAI-Lab/vanilla-numpy-mlp).
-  - [Neural network theory and backpropagation algorithm equations](https://github.com/QuCAI-Lab/vanilla-numpy-mlp/blob/dev/theory.ipynb).
-  - [Notes on Reinforcement Learning](https://github.com/QuCAI-Lab/the-world-of-rl).
+  - [Vanilla NumPy MLP neural network with SGD and Backpropagation](https://github.com/QuCAI-Lab/vanilla-numpy-mlp)
+  - [Neural network theory and backpropagation algorithm equations](https://github.com/QuCAI-Lab/vanilla-numpy-mlp/blob/dev/theory.ipynb)
+  - [The World of RL - Short Notes on Reinforcement Learning](https://github.com/QuCAI-Lab/the-world-of-rl)
 
 - Quantum Machine Learning:
-  - [Variational Quantum Eigensolver](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project).
-  - [Quantum Kernel Alignment](https://github.com/QuCAI-Lab/adapt-qka/blob/dev/supplementary.ipynb).
-
+  - [Extending Adaptive Methods for Finding an Optimal Circuit Ansatze in VQE Optimization](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project)
+  - [Adaptive Quantum Kernel Alignment for data Classification](https://github.com/QuCAI-Lab/adapt-qka)
+ 
 - Challenges
-  - [Quantum Algorithm Grand Challenge](https://github.com/QuCAI-Lab/qagc).
-  - [Qiskit Global Summer School 2022](https://github.com/QuCAI-Lab/qiskit2022-global-summer-school).
-  - [IBM Quantum Spring Challenge 2022](https://github.com/QuCAI-Lab/ibm2022-quantum-spring-challenge).
-  - [QHack2022 Coding Challenges](https://github.com/QuCAI-Lab/QHack2022).
-  - [IBM 2021 Open Science Prize](https://github.com/QuCAI-Lab/ibm2021-open-science-prize).
+  - [Quantum Algorithm Grand Challenge - QunaSys](https://github.com/QuCAI-Lab/qagc)
+  - [Qiskit Global Summer School 2022](https://github.com/QuCAI-Lab/qiskit2022-global-summer-school)
+  - [IBM Quantum Spring Challenge 2022](https://github.com/QuCAI-Lab/ibm2022-quantum-spring-challenge)
+  - [QHack2022 Coding Challenges](https://github.com/QuCAI-Lab/QHack2022)
+  - [IBM 2021 Open Science Prize](https://github.com/QuCAI-Lab/ibm2021-open-science-prize)
