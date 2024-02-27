@@ -5,7 +5,9 @@
 
 <!-- Logo: -->
 <div align="center">
-  <a href="https://qucai-lab.github.io/"><img src="https://github.com/QuCAI-Lab/qucai-lab.github.io/blob/main/assets/QuCAI-Lab.png" /></a>
+  <a href="https://qucai-lab.github.io/">
+    <img src="https://github.com/QuCAI-Lab/qucai-lab.github.io/blob/main/assets/QuCAI-Lab.png" height="500" width="500" alt="Logo">
+  </a>
 </div>
 
 <p align="center">
