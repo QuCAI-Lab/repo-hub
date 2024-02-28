@@ -33,9 +33,10 @@
   - [Circuit Quantum Electrodynamics (cQED)](https://github.com/QuCAI-Lab/circuit-qed)
 
 - Classical Machine Learning:
+  - [Finding the Transmon Regime with DDPG Algorithm](https://github.com/QuCAI-Lab/reinforce-transmon)
+  - [The World of RL - Short Notes on Reinforcement Learning](https://github.com/QuCAI-Lab/the-world-of-rl)
   - [Vanilla NumPy MLP neural network with SGD and Backpropagation](https://github.com/QuCAI-Lab/vanilla-numpy-mlp)
   - [Neural network theory and backpropagation algorithm equations](https://github.com/QuCAI-Lab/vanilla-numpy-mlp/blob/dev/theory.ipynb)
-  - [The World of RL - Short Notes on Reinforcement Learning](https://github.com/QuCAI-Lab/the-world-of-rl)
 
 - Quantum Machine Learning:
   - [Extending Adaptive Methods for Finding an Optimal Circuit Ansatze in VQE Optimization](https://github.com/QuCAI-Lab/qhack2022-hackeinberg-project)
